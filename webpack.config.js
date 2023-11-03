@@ -16,19 +16,16 @@ const pathDirFile = isDev ? 'app' : 'dist';
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: './js/main.js', // Указываем входную точку
-    output: { // Указываем точку выхода
-        path: path.resolve(__dirname, pathDirFile), // Тут мы указываем полный путь к директории, где будет храниться конечный файл
-        //path: path.join(__dirname, pathDirFile),
-        filename: `./js/${filename('js')}`, // Указываем имя этого файла
-        // assetModuleFilename: '[path][name][ext]',
+    entry: './main.js',
+    output: {
+        path: path.resolve(__dirname, pathDirFile),
+        filename: `./js/${filename('js')}`,
         assetModuleFilename: assetFilename,
         clean: true,
     },
     devServer: {
         historyApiFallback: true,
         static: {
-            // directory: path.resolve(__dirname, 'app'),
             directory: path.join(__dirname, 'src'),
         },
         open: true,
@@ -41,7 +38,12 @@ module.exports = {
             template:  path.resolve(__dirname, 'src/front.pug'),
             filename: "index.html",
         }),
-
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src/favicon.ico'),
+                    to: path.resolve(__dirname, 'dist') },
+            ],
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: `./css/${filename('css')}`,
