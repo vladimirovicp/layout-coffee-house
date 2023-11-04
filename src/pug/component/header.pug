@@ -1,2 +1,34 @@
+-
+    let menu = [
+        {
+            'name': 'Favorites',
+            'href': '#favorites'
+        },
+        {
+            'name': 'About',
+            'href': '#about'
+        },
+        {
+            'name': 'Mobile app',
+            'href': '#mobile-app'
+        },
+        {
+            'name': 'Contacts',
+            'href': '#contacts'
+        },
+    ];
+
 header.header
-    .container header
+    .container
+        .header__logo
+            a(href="#" class="header__logo-link")
+                img(src=require('../../assets/img/logo.svg'), alt="Coffee House")
+        .nav.header__menu.menu
+            .menu__mobile.is-mobile
+                .menu__icon
+            .menu__wrapper
+                ul.menu__list
+                    each item in menu
+                        li.menu__item
+                            a(href=item.href class="menu__link") !{item.name}
+                .coffee-menu Menu
