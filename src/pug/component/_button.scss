@@ -1,0 +1,17 @@
+.btn{
+  &, &:link, &:visited{
+
+  }
+
+  &:active{
+
+  }
+}
+
+@media(hover: hover) {
+  .btn{
+    &:hover{
+
+    }
+  }
+}

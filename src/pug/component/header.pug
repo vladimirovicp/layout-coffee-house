@@ -1,7 +1,7 @@
 -
     let menu = [
         {
-            'name': 'Favorites',
+            'name': 'Favorite coffee',
             'href': '#favorites'
         },
         {
@@ -31,4 +31,7 @@ header.header
                     each item in menu
                         li.menu__item
                             a(href=item.href class="menu__link") !{item.name}
-                .coffee-menu Menu
+                .menu__coffee-menu
+                    a(href='#' class="menu__link") Menu
+                        .menu__coffee-menu-icon
+                            img(src=require('../../assets/img/header/coffee-cup.svg'), alt="icon coffee cup")

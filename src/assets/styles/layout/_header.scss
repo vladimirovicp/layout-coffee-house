@@ -10,25 +10,33 @@
   &__logo{
     width: 10rem;
     height: 6rem;
+    flex-shrink: 0;
   }
 }
 
 .menu{
+
   &__list{
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
   }
+
   &__item{
     list-style: none;
-    letter-spacing: 0;
-    &:not(:last-child){
-      margin-right:3rem;
-    }
   }
-  &__link{
 
+  &__link{
+    color: $text-dark;
+    font-weight: 600;
+  }
+
+
+  &__coffee-menu{
+    .menu__link{
+      display: flex;
+    }
   }
 
 }
@@ -39,27 +47,8 @@
 
 }
 
-@media(min-width: 720px) and (max-width: 1139px){
-//768
-
+@media(max-width: 1139px){
   .menu{
-        //&__wrapper{
-        //  position: fixed;
-        //  width: 35rem;
-        //  padding: 10rem 0;
-        //  background-color:#000;
-        //  right: -100%;
-        //  transition: right 0.3s ease 0s;
-        //  overflow: auto;
-        //  z-index: 20;
-        //  &.open{
-        //    top: 0;
-        //    right: 0;
-        //  }
-        //}
-
-    &__wrapper{display: none}
-
     &__icon {
       transition-duration: 0.5s;
       position: absolute;
@@ -91,6 +80,53 @@
       border: 1px solid $border-dark;
     }
 
+    &__wrapper{
+      margin-top: 0;
+      position: fixed;
+      width: 100%;
+      min-height: calc(100vh - 10rem);
+      padding: 6rem 4rem;
+      background-color: $background-body;
+      right: -100%;
+      transition: right 0.3s ease 0s;
+      overflow: auto;
+      z-index: 20;
+      top: 10rem;
+    }
+
+    &__list{
+      flex-direction: column;
+      padding-bottom: 10rem;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 6rem;
+      }
+    }
+
+    &__link{
+      color: $text-dark;
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 125%;
+    }
+
+    &__coffee-menu{
+      display: flex;
+      justify-content: center;
+
+      .menu__link{
+        display: flex;
+      }
+
+      &-icon{
+        margin-left: 1.6rem;
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+
     &.open {
       .menu__icon {
         transition-duration: 0.5s;
@@ -103,6 +139,54 @@
           transform: rotateZ(-135deg) scaleX(1.25) translate(.8rem, -.5rem);
         }
       }
+
+      .menu__wrapper{
+        right: 0;
+      }
+    }
+  }
+}
+
+@media(min-width: 720px) and (max-width: 1139px){
+//768
+
+
+}
+
+
+
+@media(min-width: 1140px){
+
+  .menu{
+    width: 100%;
+
+    &__wrapper{
+      display: flex;
+      justify-content: center;
+    }
+
+    &__item{
+      letter-spacing: 0;
+      &:not(:last-child){
+        margin-right:3rem;
+      }
+    }
+
+    &__list{
+      justify-content: center;
+      flex: 1;
+    }
+
+    &__coffee-menu{
+      &-icon{
+        margin-left: .8rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &__link{
+      line-height: 150%;
     }
 
   }
@@ -119,102 +203,6 @@
     }
   }
 }
-
-
-
-
-
-//@media (max-width: 64em) {
-//  .menu{
-//    &__wrapper{
-//      position: fixed;
-//      width: 35rem;
-//      padding: 10rem 0;
-//      background-color:#000;
-//      right: -100%;
-//      transition: right 0.3s ease 0s;
-//      overflow: auto;
-//      z-index: 20;
-//      &.open{
-//        top: 0;
-//        right: 0;
-//      }
-//    }
-//    &__mobile{
-//      width: 4.5rem;
-//      height: 2rem;
-//    }
-//    &__icon{
-//      z-index: 25;
-//      display: block;
-//      position: relative;
-//      cursor: pointer;
-//      width: 100%;
-//      height: 100%;
-//
-//      span, &:before, &:after{
-//        left: 0;
-//        position: absolute;
-//        height: .2rem;
-//        width: 100%;
-//        transition: all 0.3s ease 0s;
-//        background-color: red;
-//      }
-//
-//      &:before, &:after{
-//        content: '';
-//      }
-//
-//      &:before{
-//        top: 0;
-//      }
-//      &:after{
-//        bottom: 0;
-//      }
-//
-//      span{
-//        top: 50%;
-//        transform: scale(1) translate(0, -50%);
-//      }
-//
-//      &.open{
-//        span{
-//          transform: scale(0) translate(0, -50%);
-//        }
-//
-//        &::before{
-//          top:50%;
-//          transform: rotate(-45deg) translate(0, -50%);
-//        }
-//
-//        &::after{
-//          bottom:50%;
-//          transform: rotate(45deg) translate(0, 50%);
-//        }
-//      }
-//    }
-//
-//    &__list{
-//      flex-direction: column;
-//      margin-left: 0;
-//    }
-//
-//    &__item {
-//      &:not(:last-child) {
-//        margin-right: 0;
-//        margin-bottom: 4.2rem;
-//      }
-//    }
-//  }
-//}
-//
-//@media(max-width: 48em){
-//  .menu{
-//    &__item{
-//
-//    }
-//  }
-//}
 
 
 
