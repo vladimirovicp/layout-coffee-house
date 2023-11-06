@@ -1,0 +1,39 @@
+.btn{
+  &, &:link, &:visited{
+    position: relative;
+    overflow:hidden;
+    padding: 2rem;
+    min-width: 16rem;
+    display: inline-block;
+    border-radius: 10rem;
+    text-align: center;
+    background-color: $background-body;
+    color: $text-dark;
+    transition: padding-right 200ms ease;
+  }
+
+  &:active{
+
+  }
+
+  &__icon-cofee{
+    position: absolute;
+    display: inline-block;
+    margin-left: .8rem;
+    width: 2rem;
+    height: 2rem;
+    right: -3rem;
+    transition: right 400ms ease;
+  }
+}
+
+@media(hover: hover) {
+  .btn{
+    &:hover{
+      padding-right: 4rem;
+      .btn__icon-cofee{
+        right: 4.2rem;
+      }
+    }
+  }
+}

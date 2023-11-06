@@ -1,0 +1,44 @@
+.enjoy{
+  .container{
+    position: relative;
+    padding: 10rem;
+  }
+  .wrapper{
+    width: 53rem;
+  }
+
+  &_bg{
+    position: absolute;
+    width: calc(100% - 8rem);
+    height: 100%;
+    top: 0;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+    z-index: -1;
+
+    img{
+      object-fit: cover;
+      border-radius: 4rem;
+    }
+  }
+
+  &__title{
+    margin: 0;
+    font-size: 7.2rem;
+    font-style: italic;
+    font-weight: 600;
+    color: $text-light;
+    line-height: 105%;
+    span{
+      color: $text-accent;
+    }
+  }
+
+  &__info{
+    padding: 4rem 0;
+    color: $text-light;
+    line-height: 150%;
+  }
+}
