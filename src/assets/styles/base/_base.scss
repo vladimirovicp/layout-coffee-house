@@ -35,6 +35,10 @@ a{
   text-decoration: none;
 }
 
+section{
+  padding-bottom: 10rem;
+}
+
 
 @media(max-width: 719px){
   //380
@@ -71,10 +75,11 @@ a{
 @media(min-width: 1140px){
   html{
     font-size: 0.69444444vw; // 10 / (1440 / 100)
+    //font-size: 0.87719vw; // 10 / (1140 / 100)
   }
 
   .container{
-    width: 144rem;
+    width: 100%;
     margin: 0 auto;
     padding: 0 4rem;
   }
@@ -85,6 +90,11 @@ a{
   html{
     font-size: 10px;
   }
+
+  .container{
+    width: 144rem;
+  }
+
 }
 
 

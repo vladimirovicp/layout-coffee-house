@@ -1,0 +1,36 @@
+.slider
+    .slider__wrapper
+        .slider__slide
+
+            .slide__info
+                +main-img('slider/coffee-slider-1.png','coffee-slider-1')
+                .slide__name S’mores Frappuccino
+                .slide__description This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.
+                .slide__price $5.50
+        .slider__slide
+            .slide__info
+                +main-img('slider/coffee-slider-2.png','coffee-slider-2')
+                .slide__name Caramel Macchiato
+                .slide__description Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.
+                .slide__price $5.00
+        .slider__slide
+            .slide__info
+                +main-img('slider/coffee-slider-3.png','coffee-slider-3')
+                .slide__name Ice coffee
+                .slide__description A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                .slide__price $4.50
+
+
+    .slider__button-prev.slider__arrow.disable
+        +main-svg('assets/img/svg/slider/arrow.svg#left')
+
+    .slider__button-next.slider__arrow
+        +main-svg('assets/img/svg/slider/arrow.svg#right')
+
+    .slider__pagination
+        .slider__bullet.active(data-bullet=1)
+            span
+        .slider__bullet(data-bullet=2)
+            span
+        .slider__bullet(data-bullet=3)
+            span

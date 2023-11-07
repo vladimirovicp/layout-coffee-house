@@ -27,3 +27,5 @@ if(menuMobile){
         }
     });
 }
+
+import './slider'

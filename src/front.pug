@@ -4,8 +4,10 @@ block variables_layout
         let title = 'Главная страница'
         let curPage = '/';
 
+include pug/_mixin
 block content
     main
         include pug/section/_enjoy
+        include pug/section/_favourites
 
 

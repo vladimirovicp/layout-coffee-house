@@ -48,6 +48,21 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: `./css/${filename('css')}`,
         }),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ['dist'],
+                },
+                onEnd: {
+                    copy: [
+                        {
+                            source: path.join(__dirname, 'src/assets/img/svg'),
+                            destination: path.join(__dirname, 'dist/assets/img/svg'),
+                        },
+                    ],
+                },
+            },
+        }),
     ],
 
     module:{
