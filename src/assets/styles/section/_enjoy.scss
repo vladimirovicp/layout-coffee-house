@@ -42,3 +42,39 @@
     line-height: 150%;
   }
 }
+
+@media(max-width: 719px){
+  //380
+
+  .enjoy{
+
+    .container{
+      position: relative;
+      padding: 6rem 3.2rem;
+    }
+
+    &_bg{
+      width: calc(100% - 1.6rem);
+    }
+
+    .wrapper{
+      width: 100%;
+    }
+
+    &__title{
+      font-size: 4.2rem;
+      line-height: 115%;
+    }
+  }
+
+
+}
+
+@media(min-width: 720px) and (max-width: 1139px){
+
+}
+
+@media(min-width: 1140px){
+
+
+}
