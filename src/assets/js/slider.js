@@ -69,4 +69,10 @@ if (slider) {
         }
     }
 
+    window.addEventListener('resize', function (event) {
+        wrapper.scrollLeft = 0;
+        currentBullet = 1;
+        imgWidth = firstImg.clientWidth;
+    }, true);
+
 }

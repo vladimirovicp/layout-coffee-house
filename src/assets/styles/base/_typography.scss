@@ -8,3 +8,10 @@
 .accent{
   color: $text-accent;
 }
+
+
+@media(max-width: 719px){
+  .title{
+    font-size: 3.2rem;
+  }
+}
