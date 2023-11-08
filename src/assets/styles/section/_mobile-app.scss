@@ -1,0 +1,31 @@
+.mobile-app{
+
+  p{
+    padding-bottom: 4rem;
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info{
+    width: 63rem;
+    display: flex;
+    align-items: center;
+
+    &-wrap{
+
+    }
+  }
+
+  &__photo{
+    width: 63rem;
+    height: 63rem;
+  }
+
+  &__btns{
+    display: flex;
+    gap:2rem
+  }
+
+}

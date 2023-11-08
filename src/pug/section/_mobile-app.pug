@@ -1,1 +1,22 @@
-div Mobile App
+section.section.mobile-app
+    .container
+        .row
+            .col.mobile-app__info
+                .mobile-app__info-wrap
+                    h2.title
+                        span.accent Download
+                        |&nbsp;Apps To Facilitate Ordering
+                    p Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are
+                    .mobile-app__btns
+                        a(href="#" class="btn__app")
+                            +main-svg('assets/img/svg/btn-app.svg#store')
+                            .btn__app-wrap
+                                span.btn__app-text Download on the
+                                span.btn__app-name App Store
+                        a(href="#" class="btn__app")
+                            +main-svg('assets/img/svg/btn-app.svg#google')
+                            .btn__app-wrap
+                                span.btn__app-text Get it on
+                                span.btn__app-name Google Play
+            .col.mobile-app__photo
+                +main-img('section/mobile-app/mobile-screens.png','mobile-screens.png')

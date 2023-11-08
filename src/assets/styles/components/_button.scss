@@ -25,7 +25,47 @@
     right: -3rem;
     transition: right 400ms ease;
   }
+
+  &__app{
+    color: $text-dark;
+    display: inline-flex;
+    align-items: center;
+
+    border: 1px solid $border-dark;
+    border-radius: 10rem;
+    padding: 1.2rem 2rem;
+
+    transition: background-color 400ms ease, color 400ms ease;
+
+    svg{
+      width: 3.6rem;
+      height: 3.6rem;
+      fill: $text-dark;
+      transition: fill 400ms ease;
+    }
+
+    &-text{
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 140%;
+      padding-bottom: .2rem;
+    }
+
+    &-name{
+      font-weight: 600;
+      line-height: 150%;
+    }
+
+    &-wrap{
+      display: flex;
+      flex-direction: column;
+      margin-left: .8rem;
+      min-width: 11.6rem;
+    }
+
+  }
 }
+
 
 @media(hover: hover) {
   .btn{
@@ -35,5 +75,20 @@
         right: 4.2rem;
       }
     }
+
+    &__app{
+      &:hover{
+        background-color: $background-container;
+        color: $text-light;
+        svg{
+          fill: $text-light;
+        }
+      }
+
+
+    }
   }
+
+
+
 }
