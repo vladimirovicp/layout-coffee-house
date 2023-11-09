@@ -201,6 +201,19 @@
         cursor: pointer;
       }
     }
+
+    &__link{
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-size: 0% 0.2rem;
+      background-position: 0% 100%;
+      transition: background-size .8s;
+      &:hover{
+        background-size: 100% 0.2rem;
+      }
+    }
+
+
   }
 }
 
