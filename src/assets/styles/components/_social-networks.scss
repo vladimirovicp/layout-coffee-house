@@ -1,0 +1,50 @@
+.social-networks{
+
+  &__list{
+    display: flex;
+    padding: 0;
+  }
+
+  &__item{
+    list-style: none;
+    margin-left: 0;
+
+    &:not(:last-child){
+      margin-right: 1.2rem;
+    }
+  }
+
+  &__link{
+    display: flex;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid $border-light;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    cursor: pointer;
+    transition: background-color ease-out 400ms, opacity ease-out .8s;
+
+
+    svg{
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: $border-light;
+      transition: fill .5s;
+    }
+  }
+}
+
+@media(hover: hover) {
+  .social-networks{
+    &__link{
+      &:hover{
+        background-color: $background-body;
+        svg{
+          fill: $text-dark;
+        }
+      }
+    }
+  }
+}

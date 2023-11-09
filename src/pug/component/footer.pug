@@ -1,2 +1,48 @@
+-
+    const social = [
+        {
+            'href': 'https://twitter.com/html5doctor',
+            'name': 'twitter',
+            'class': 'twitter'
+        },
+        {
+            'href': 'https://www.instagram.com/beeple_crap',
+            'name': 'instagram',
+            'class': 'instagram'
+        },
+        {
+            'href': 'https://www.facebook.com/directory/groups/I-620554-620736',
+            'name': 'facebook',
+            'class': 'facebook'
+        },
+    ];
+
+    const contacts = [
+        {
+            'href': 'https://www.google.ru/maps/place/%D0%A1%D0%B0%D0%BD%D1%82%D1%8C%D1%8F%D0%B3%D0%BE+%D0%91%D0%B5%D1%80%D0%BD%D0%B0%D0%B1%D0%B5%D1%83/@53.905559,27.5596136,12.83z/data=!4m5!3m4!1s0xd4228e23705d39f:0xa8fff6d26e2b1988!8m2!3d40.4530387!4d-3.6883337',
+            'ico': 'pin-alt',
+        }
+    ];
+
 footer.footer
-    .container footer
+    .container
+        .footer__wrapper
+
+            .footer__info
+                h2.title
+                    span.accent Come visit us
+                    |&nbsp;just relax and enjoy cuppa coffee
+                .social-networks
+                    ul.social-networks__list
+                        each soc in social
+                            li.social-networks__item
+                                a(href=soc.href class="social-networks__link " + soc.class target="_blank" rel="noopener")
+                                    +main-svg('assets/img/svg/social-icon.svg#' + soc.class)
+
+            .footer__contacts Contacts
+                ul.footer__contacts-list
+                    each contact in contacts
+                        li.footer__contacts-item
+                            a(href=contact.href target="_blank" rel="noopener")
+                                +main-svg('assets/img/svg/contacts-icon.svg#' + contact.ico)
+                                |8558 Green Rd.,  LA
