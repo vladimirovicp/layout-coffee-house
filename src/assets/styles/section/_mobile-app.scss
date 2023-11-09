@@ -5,11 +5,11 @@
   }
   .row{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
   &__info{
-    width: 63rem;
+    //width: 63rem;
     display: flex;
     align-items: center;
 
@@ -26,6 +26,51 @@
   &__btns{
     display: flex;
     gap:2rem
+  }
+
+}
+
+
+@media(max-width: 719px){
+  .mobile-app{
+    &__info{
+      margin-bottom: 4rem;
+    }
+
+
+    &__photo{
+      width: 100%;
+      height: auto;
+    }
+
+    &__btns{
+      display: block;
+    }
+  }
+}
+
+@media(min-width: 720px) and (max-width: 1139px){
+  .mobile-app{
+    &__info{
+      margin-bottom: 10rem;
+    }
+    &__photo{
+      margin: 0 auto;
+    }
+  }
+}
+
+@media(min-width: 1140px){
+
+  .mobile-app{
+    .row{
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__info{
+      width: 63rem;
+    }
   }
 
 }
