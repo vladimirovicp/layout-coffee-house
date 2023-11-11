@@ -21,7 +21,11 @@
         {
             'href': 'https://www.google.ru/maps/place/%D0%A1%D0%B0%D0%BD%D1%82%D1%8C%D1%8F%D0%B3%D0%BE+%D0%91%D0%B5%D1%80%D0%BD%D0%B0%D0%B1%D0%B5%D1%83/@53.905559,27.5596136,12.83z/data=!4m5!3m4!1s0xd4228e23705d39f:0xa8fff6d26e2b1988!8m2!3d40.4530387!4d-3.6883337',
             'ico': 'pin-alt',
-        }
+        },
+        {
+            'href': '+16035550123',
+            'ico': 'phone',
+        },
     ];
 
 footer.footer
@@ -39,10 +43,26 @@ footer.footer
                                 a(href=soc.href class="social-networks__link " + soc.class target="_blank" rel="noopener")
                                     +main-svg('assets/img/svg/social-icon.svg#' + soc.class)
 
-            .footer__contacts Contacts
-                ul.footer__contacts-list
-                    each contact in contacts
+            .footer__contacts
+                .footer__contacts-wrapper
+                    .footer__contacts-title Contacts
+                    ul.footer__contacts-list
+                        // each contact in contacts
+                        //     li.footer__contacts-item
+                        //         a(href=contact.href target="_blank" rel="noopener")
+                        //             +main-svg('assets/img/svg/contacts-icon.svg#' + contact.ico)
+                        //             |8558 Green Rd.,  LA
+
                         li.footer__contacts-item
-                            a(href=contact.href target="_blank" rel="noopener")
-                                +main-svg('assets/img/svg/contacts-icon.svg#' + contact.ico)
-                                |8558 Green Rd.,  LA
+                            a(href=contacts[0].href target="_blank" rel="noopener")
+                                +main-svg('assets/img/svg/contacts-icon.svg#' + contacts[0].ico)
+                                | 8558 Green Rd.,  LA
+                        li.footer__contacts-item
+                            a(href="tel:+16035550123" target="_blank" rel="noopener")
+                                +main-svg('assets/img/svg/contacts-icon.svg#' + contacts[1].ico)
+                                | +1 (603) 555-0123
+                        li.footer__contacts-item
+                            span
+                                +main-svg('assets/img/svg/contacts-icon.svg#clock')
+                                |Mon-Sat: 9:00 AM – 23:00 PM
+
