@@ -38,6 +38,12 @@ module.exports = {
             template:  path.resolve(__dirname, 'src/front.pug'),
             filename: "index.html",
         }),
+        new HTMLWebpackPlugin({
+            template:  path.resolve(__dirname, 'src/page-menu.pug'),
+            filename: "menu.html",
+        }),
+
+
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, 'src/favicon.ico'),

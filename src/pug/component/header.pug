@@ -1,28 +1,53 @@
+block vars
+
 -
-    let menu = [
-        {
-            'name': 'Favorite coffee',
-            'href': '#favorites'
-        },
-        {
-            'name': 'About',
-            'href': '#about'
-        },
-        {
-            'name': 'Mobile app',
-            'href': '#mobile-app'
-        },
-        {
-            'name': 'Contacts',
-            'href': '#contacts'
-        },
-    ];
+    let menu = [];
+
+    if(curPage === '/'){
+        menu = [
+                {
+                    'name': 'Favorite coffee',
+                    'href': '#favorites'
+                },
+                {
+                    'name': 'About',
+                    'href': '#about'
+                },
+                {
+                    'name': 'Mobile app',
+                    'href': '#mobile-app'
+                },
+                {
+                    'name': 'Contacts',
+                    'href': '#footer'
+                }
+        ]
+    } else{
+        menu = [
+            {
+                'name': 'Favorite coffee',
+                'href': '/#favorites'
+            },
+            {
+                'name': 'About',
+                'href': '/#about'
+            },
+            {
+                'name': 'Mobile app',
+                'href': '/#mobile-app'
+            },
+            {
+                'name': 'Contacts',
+                'href': '/#footer'
+            }
+        ]
+    }
 
 header.header
     .container
         .header__logo
-            a(href="#" class="header__logo-link")
-                img(src=require('../../assets/img/logo.svg'), alt="Coffee House")
+            a(href="/" class="header__logo-link")
+                img(src=require('/assets/img/logo.svg'), alt="Coffee House")
         .nav.header__menu.menu
             .menu__mobile.is-mobile
                 .menu__icon
@@ -32,6 +57,6 @@ header.header
                         li.menu__item
                             a(href=item.href class="menu__link") !{item.name}
                 .menu__coffee-menu
-                    a(href='#' class="menu__link") Menu
+                    a(href='/menu.html' class="menu__link") Menu
                         .menu__coffee-menu-icon
-                            img(src=require('../../assets/img/header/coffee-cup.svg'), alt="icon coffee cup")
+                            img(src=require('/assets/img/header/coffee-cup.svg'), alt="icon coffee cup")
