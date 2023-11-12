@@ -5,5 +5,38 @@ block variables_layout
         let curPage = '/menu.html';
 
 include pug/_mixin
+
 block content
-    main menu
+    -
+        let btnMenu = [
+            {
+                'src': '/assets/img/menu/ico-coffee.png',
+                'alt': 'coffee',
+                'text': 'Coffee',
+                'active': true
+            },
+            {
+                'src': '/assets/img/menu/ico-tea.png',
+                'alt': 'tea',
+                'text': 'Tea',
+                'active': false
+            },
+            {
+                'src': '/assets/img/menu/ico-dessert.png',
+                'alt': 'dessert',
+                'text': 'Dessert'
+            }
+        ];
+    main.page-menu
+        .container
+            h1.title Behind each of our cups hides an
+                span.accent &nbsp;amazing surprise
+
+            .menu-pagination
+                each item in btnMenu
+                    -
+                        const activeClass = item.active ? ' active' : '';
+                    a(href="#" class="btn__menu" + activeClass)
+                        span.btn__menu-ico
+                            img(src=item.src, alt=item.alt)
+                        |!{item.text}

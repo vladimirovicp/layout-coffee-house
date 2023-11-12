@@ -64,6 +64,41 @@
     }
 
   }
+
+  &__menu{
+    padding: .8rem 1.6rem .8rem .8rem;
+    color: $text-dark;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid $border-light;
+    border-radius: 10rem;
+
+    &-ico{
+      width: 3rem;
+      height: 3rem;
+      margin-right: .8rem;
+      background-color: $border-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      img{
+        width: 1.6rem;
+        height: 2.4rem;
+      }
+    }
+
+    &.active{
+      background-color: $background-container;
+      color: $text-light;
+      .btn__menu-ico{
+        background-color: $background-body;
+      }
+      cursor: default;
+    }
+
+  }
 }
 
 @media(max-width: 719px){
@@ -96,6 +131,20 @@
       }
 
 
+    }
+
+    &__menu{
+      transition: background-color .4s ease-in, color .4s ease-in;
+      .btn__menu-ico{
+        transition: background-color .6s ease-in;
+      }
+      &:hover{
+        background-color: $background-container;
+        color: $text-light;
+        .btn__menu-ico{
+          background-color: $background-body;
+        }
+      }
     }
   }
 
