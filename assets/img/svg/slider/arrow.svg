@@ -1,0 +1,8 @@
+<svg width="0" height="0" class="hidden">
+    <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="left">
+        <path id="Vector" d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="right">
+        <path id="Vector" d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+</svg>
