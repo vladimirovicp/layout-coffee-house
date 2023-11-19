@@ -89,7 +89,7 @@
       }
     }
 
-    &.active{
+    &.is-active{
       background-color: $background-container;
       color: $text-light;
       .btn__menu-ico{

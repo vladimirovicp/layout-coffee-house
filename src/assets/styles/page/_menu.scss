@@ -1,15 +1,103 @@
 .page-menu{
   .title{
-    width: 80rem;
+    //width: 80rem;
     text-align: center;
-    margin: 0 auto;
+    margin: 0;
+    //margin: 0 auto;
   }
 }
 
-.menu-pagination{
-  display: flex;
-  justify-content: center;
-  gap: 1.6rem;
+.menu{
+  &-pagination{
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
 
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+  &__cards{
+    //display: grid;
+    grid-template-columns: repeat(4, 31rem);
+    gap: 4rem;
+
+  }
+
+  &__card{
+    width: 31rem;
+    height: 50.6rem;
+
+    border-radius: 4rem;
+    border: 1px solid $border-light;
+
+    &-img{
+      width: 31rem;
+      height: 31rem;
+      border-radius: 4rem;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      position: relative;
+      img{
+        width: 34rem;
+        height: 34rem;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    &-wrapper{
+      padding: 0 2rem;
+    }
+
+    &-name{
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 125%;
+      padding-bottom: 1.2rem;
+    }
+
+    &-description{
+      padding-bottom: 1.2rem;
+    }
+
+    &-price{
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 125%;
+
+    }
+  }
 }
+
+@media(max-width: 719px){
+  .menu{
+    &-pagination{
+      gap: .8rem;
+    }
+    &__cards{
+      grid-template-columns: repeat(1, 31rem);
+    }
+  }
+}
+
+@media(min-width: 720px) and (max-width: 1139px){
+
+  .menu{
+    &__cards{
+      grid-template-columns: repeat(2, 31rem);
+    }
+  }
+
+
+}
+
+@media(min-width: 1140px){
+  .page-menu{
+    .title{
+      width: 80rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+

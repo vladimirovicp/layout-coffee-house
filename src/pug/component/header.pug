@@ -1,4 +1,5 @@
 block vars
+    - curPage
 -
     let menu = [];
 
@@ -45,7 +46,7 @@ block vars
 header.header
     .container
         .header__logo
-            a(href="/" class="header__logo-link")
+            a(href="./" class="header__logo-link")
                 img(src=require('/assets/img/logo.svg'), alt="Coffee House")
         .nav.header__menu.menu
             .menu__mobile.is-mobile
@@ -56,6 +57,6 @@ header.header
                         li.menu__item
                             a(href=item.href class="menu__link") !{item.name}
                 .menu__coffee-menu
-                    a(href='/menu.html' class="menu__link") Menu
+                    a(href='./menu.html' class="menu__link") Menu
                         .menu__coffee-menu-icon
                             img(src=require('/assets/img/header/coffee-cup.svg'), alt="icon coffee cup")

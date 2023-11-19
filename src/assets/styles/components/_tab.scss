@@ -1,0 +1,34 @@
+.tabs-nav {
+
+}
+.tabs-nav__item {
+
+}
+
+.tabs-nav__item.is-active {
+}
+
+.tab {
+  display: none;
+}
+.tab.is-active { display: grid; animation: fadein 0.8s;}
+
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media(max-width: 719px){
+  .tabs{
+    &__content{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
