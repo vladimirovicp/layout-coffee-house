@@ -34,9 +34,11 @@
 
 
   &__coffee-menu{
-    .menu__link{
+    .menu__link, .menu__link-none{
       display: flex;
     }
+
+
   }
 
 }

@@ -103,3 +103,25 @@
 }
 
 
+@media(hover: hover) {
+  .menu{
+    &__card{
+      .menu__card-img{
+        img{
+          transition: width .4s ease-in, height .4s ease-in;
+        }
+      }
+      &:hover{
+        cursor: pointer;
+        .menu__card-img{
+          img{
+            width: 31rem;
+            height: 31rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
