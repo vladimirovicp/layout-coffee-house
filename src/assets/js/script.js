@@ -1,4 +1,9 @@
-console.log('script.js');
+console.log('Самопроверка:');
+console.log('Проверка валидации страниц: +16');
+console.log('Планировка соответствует дизайну +42');
+console.log('Требования CSS +10');
+console.log('Интерактивность +32');
+console.log('Итого: 100');
 
 
 //Header menu
