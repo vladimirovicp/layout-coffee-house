@@ -1,16 +1,17 @@
 .enjoy{
   .container{
     position: relative;
-    padding: 10rem;
+    padding: 10rem 14rem;
   }
   .wrapper{
     width: 53rem;
+    height: 44.4rem;
   }
 
   &_bg{
     position: absolute;
     width: calc(100% - 8rem);
-    height: 100%;
+    height: 64.5rem;
     top: 0;
 
     left: 50%;
@@ -27,12 +28,12 @@
   &__title{
     margin: 0;
     font-size: 7.2rem;
-    font-style: italic;
     font-weight: 600;
     color: $text-light;
     line-height: 105%;
     span{
       color: $text-accent;
+      font-style: italic;
     }
   }
 

@@ -40,8 +40,9 @@
         width: 34rem;
         height: 34rem;
         position: absolute;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, -50%);
       }
     }
 
@@ -57,6 +58,7 @@
     }
 
     &-description{
+      height: 8.2rem;
       padding-bottom: 1.2rem;
     }
 
