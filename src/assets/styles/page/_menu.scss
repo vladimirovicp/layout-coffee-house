@@ -87,8 +87,14 @@
   .menu{
     &__cards{
       grid-template-columns: repeat(2, 31rem);
+
+      .show-more{
+        grid-column: 1 / 3;
+        text-align: center;
+      }
     }
   }
+
 
 
 }
