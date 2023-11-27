@@ -8,7 +8,6 @@
   }
 
   &__contacts{
-
     display: flex;
     align-items: center;
 
@@ -64,9 +63,21 @@
 
 @media(min-width: 720px) and (max-width: 1139px){
   .footer {
-    padding: 10rem 6rem;
+    padding: 0 4rem 4rem;
+    .container{
+      padding: 10rem 6rem;
+      border-radius: 4rem;
+    }
     &__info {
       margin-bottom: 10rem;
+    }
+
+    &__contacts{
+      &-item{
+        &:not(:last-child){
+          padding-bottom: 2rem;
+        }
+      }
     }
   }
 }
