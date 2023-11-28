@@ -2,9 +2,11 @@
   display: grid;
   grid-gap: 4rem;
   &__item{
+    overflow: hidden;
+    border-radius: 2rem;
     img{
-      border-radius: 2rem;
-      object-fit: none;
+      object-fit: cover;
+      transform: scale(1.1);
     }
   }
 }
@@ -44,6 +46,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 43rem 12rem 43rem;
     &__item{
+
       &--1 {
         grid-column-start: 1;
         grid-row-start: 1;
@@ -67,6 +70,20 @@
     }
   }
 
+}
+
+
+@media(hover: hover) {
+  .gallery{
+    &__item{
+      img{
+        transition: all .5s ease-out;
+        &:hover{
+          transform: scale(1);
+        }
+      }
+    }
+  }
 }
 
 

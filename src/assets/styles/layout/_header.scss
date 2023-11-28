@@ -38,6 +38,20 @@
       display: flex;
     }
 
+    .menu__link-none{
+      font-weight: 600;
+      position: relative;
+      &:after {
+        position: absolute;
+        background-color: $text-dark;
+        display: block;
+        content: "";
+        height: 2px;
+        bottom: -.4rem;
+        width: 100%;
+      }
+    }
+
 
   }
 
