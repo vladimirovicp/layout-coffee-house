@@ -40,7 +40,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             template:  path.resolve(__dirname, 'src/page-menu.pug'),
-            filename: "menu.html",
+            filename: "menu/index.html",
         }),
 
 

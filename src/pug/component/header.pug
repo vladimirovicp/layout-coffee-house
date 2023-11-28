@@ -50,7 +50,7 @@ header.header
                 span(class="header__logo-link")
                     img(src=require('/assets/img/logo.svg'), alt="Coffee House")
             else
-                a(href="./" class="header__logo-link")
+                a(href="https://vladimirovicp.github.io/layout-coffee-house/" class="header__logo-link")
                     img(src=require('/assets/img/logo.svg'), alt="Coffee House")
         .nav.header__menu.menu
             .menu__mobile.is-mobile
@@ -63,12 +63,12 @@ header.header
 
                 if curPage === '/'
                     .menu__coffee-menu
-                        a(href='./menu.html' class="menu__link") Menu
+                        a(href='./menu' class="menu__link") Menu
                             .menu__coffee-menu-icon
                                 img(src=require('/assets/img/header/coffee-cup.svg'), alt="icon coffee cup")
                 else
                     .menu__coffee-menu
-                        span(class="menu__link-none") Menu
+                        .menu__link-none Menu
                             .menu__coffee-menu-icon
                                 img(src=require('/assets/img/header/coffee-cup.svg'), alt="icon coffee cup")
 
