@@ -1,3 +1,5 @@
+
+
 -
     const social = [
         {
@@ -28,6 +30,8 @@
         },
     ];
 
+
+
 footer#footer.footer
     .container
         .footer__wrapper
@@ -41,7 +45,7 @@ footer#footer.footer
                         each soc in social
                             li.social-networks__item
                                 a(href=soc.href class="social-networks__link " + soc.class target="_blank" rel="noopener")
-                                    +main-svg('assets/img/svg/social-icon.svg#' + soc.class)
+                                    +main-svg('https://vladimirovicp.github.io/layout-coffee-house/assets/img/svg/social-icon.svg#' + soc.class)
 
             .footer__contacts
                 .footer__contacts-wrapper
@@ -50,14 +54,14 @@ footer#footer.footer
 
                         li.footer__contacts-item
                             a(href=contacts[0].href target="_blank" rel="noopener")
-                                +main-svg('assets/img/svg/contacts-icon.svg#' + contacts[0].ico)
+                                +main-svg('https://vladimirovicp.github.io/layout-coffee-house/assets/img/svg/contacts-icon.svg#' + contacts[0].ico)
                                 | 8558 Green Rd.,  LA
                         li.footer__contacts-item
                             a(href="tel:+16035550123" target="_blank" rel="noopener")
-                                +main-svg('assets/img/svg/contacts-icon.svg#' + contacts[1].ico)
+                                +main-svg('https://vladimirovicp.github.io/layout-coffee-house/assets/img/svg/contacts-icon.svg#' + contacts[1].ico)
                                 | +1 (603) 555-0123
                         li.footer__contacts-item
                             span
-                                +main-svg('assets/img/svg/contacts-icon.svg#clock')
+                                +main-svg('https://vladimirovicp.github.io/layout-coffee-house/assets/img/svg/contacts-icon.svg#clock')
                                 |Mon-Sat: 9:00 AM – 23:00 PM
 
