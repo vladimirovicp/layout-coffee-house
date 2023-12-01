@@ -151,6 +151,17 @@
 
 @media(min-width: 720px) and (max-width: 1139px){
 
+  .slider {
+    &__button-prev {
+      left: 0;
+    }
+
+    &__button-next {
+      right: 0;
+    }
+  }
+
+
 }
 @media(min-width: 1140px){
   .slider{
@@ -174,7 +185,6 @@
   .slider {
 
     &__arrow{
-      //transition: background-color ease-out 400ms;
       svg{transition: stroke ease-out 400ms;}
       &:hover{
         background-color: $background-container;

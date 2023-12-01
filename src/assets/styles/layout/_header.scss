@@ -126,6 +126,13 @@
       font-size: 3.2rem;
       font-weight: 600;
       line-height: 125%;
+
+      &-none{
+        color: $text-dark;
+        font-size: 3.2rem;
+        font-weight: 600;
+        line-height: 125%;
+      }
     }
 
     &__coffee-menu{
@@ -217,17 +224,6 @@
         cursor: pointer;
       }
     }
-
-    //&__link{
-    //  background-image: linear-gradient(currentColor, currentColor);
-    //  background-repeat: no-repeat;
-    //  background-size: 0% 0.2rem;
-    //  background-position: 0% 100%;
-    //  transition: background-size .8s;
-    //  &:hover{
-    //    background-size: 100% 0.2rem;
-    //  }
-    //}
 
     &__link {
       position: relative;

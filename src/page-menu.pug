@@ -748,7 +748,7 @@ block content
                         let i = 0;
                     .menu__cards.tab.is-active.tab-1
                         each item in products
-                            if item.category === categoryProduct
+                            if (item.category === categoryProduct && i < 4)
                                 - i++
                                 .menu__card
                                     .menu__card-img
@@ -759,7 +759,8 @@ block content
                                         .menu__card-price $!{item.price}
 
                         .show-more
-                            button.btn__show-more Показать еще
+                            button.btn__refresh
+                                img(src=require('./assets/img/menu/refresh.svg'), alt="icon coffee cup")
 
                     -
                         categoryProduct = 'tea';

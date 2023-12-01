@@ -17,15 +17,49 @@
 
   }
 
-  //&__icon-cofee{
-  //  position: absolute;
-  //  display: inline-block;
-  //  margin-left: .8rem;
-  //  width: 2rem;
-  //  height: 2rem;
-  //  right: -3rem;
-  //  transition: right 400ms ease;
-  //}
+  &__refresh{
+    border: 1px solid $border-dark;
+    border-radius: 10rem;
+    padding: 0;
+    width: 6rem;
+    height: 6rem;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &__icon-cofee {
+    position: absolute;
+    display: inline-block;
+    margin-left: .8rem;
+    width: 2rem;
+    height: 2rem;
+    right: 6rem;
+  }
 
   &__app{
     color: $text-dark;
@@ -113,17 +147,25 @@
 }
 
 
+@media(min-width: 720px) and (max-width: 1139px){
+  .btn, .btn:link, .btn:visited{
+    padding-right: 4.5rem;
+  }
+
+  .btn{
+    &__icon-cofee{
+      right: 6.4rem;
+    }
+  }
+}
+
+
+
+
 @media(hover: hover) {
   .btn{
     &__icon-cofee{
-      position: absolute;
-      display: inline-block;
-      margin-left: .8rem;
-      width: 2rem;
-      height: 2rem;
-      right: 6rem;
       transform: scale(0);
-      //right: -3rem;
       transition: transform 400ms ease;
     }
     &:hover{
@@ -160,6 +202,15 @@
         }
       }
     }
+
+    &__refresh{
+      cursor: pointer;
+      transition: background-color .6s ease-in;
+      &:hover{
+        background-color: $background-container;
+      }
+    }
+
   }
 
 
