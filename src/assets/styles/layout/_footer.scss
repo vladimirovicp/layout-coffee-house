@@ -54,10 +54,25 @@
 @media(max-width: 719px){
 
   .footer {
-    padding: 6rem 1.6rem;
+    padding: 0 1.6rem;
+
+    .container{
+      padding: 6rem 1.6rem;
+      border-radius: 4rem;
+    }
+
     &__info {
       margin-bottom: 4rem;
     }
+
+    &__contacts{
+      &-item{
+        &:not(:last-child){
+          padding-bottom: 2rem;
+        }
+      }
+    }
+
   }
 }
 

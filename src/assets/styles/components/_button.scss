@@ -137,11 +137,18 @@
 }
 
 @media(max-width: 719px){
+  .btn, .btn:link, .btn:visited{
+    padding-right: 4.5rem;
+  }
+
   .btn{
     &__app{
       &:not(:last-child){
         margin-bottom: 2rem;
       }
+    }
+    &__icon-cofee{
+      right: 6.4rem;
     }
   }
 }
