@@ -64,6 +64,12 @@
 }
 
 @media(max-width: 1139px){
+
+  .header{
+    &__logo{
+      z-index: 100;
+    }
+  }
   .menu{
     &__icon {
       transition-duration: 0.5s;
@@ -94,20 +100,22 @@
       transition-duration: 0.5s;
       border-radius: 50%;
       border: 1px solid $border-dark;
+      z-index: 100;
     }
 
     &__wrapper{
       margin-top: 0;
       position: fixed;
       width: 100%;
-      min-height: calc(100vh - 10rem);
-      padding: 6rem 4rem;
+      min-height: 100vh;
+      padding: 16rem 4rem 6rem;
       background-color: $background-body;
       right: -100%;
       transition: right 0.3s ease 0s;
       overflow: auto;
       z-index: 20;
-      top: 10rem;
+      //top: 10rem;
+      top: 0;
     }
 
     &__list{

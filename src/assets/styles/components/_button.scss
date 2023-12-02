@@ -2,7 +2,6 @@
   &, &:link, &:visited{
     position: relative;
     overflow:hidden;
-    padding: 2rem;
     min-width: 20rem;
     display: inline-block;
     border-radius: 10rem;
@@ -12,6 +11,8 @@
     color: $text-dark;
     transition: padding-right 200ms ease;
   }
+
+  padding: 2rem;
 
   &:active{
 
@@ -137,11 +138,8 @@
 }
 
 @media(max-width: 719px){
-  .btn, .btn:link, .btn:visited{
-    padding-right: 4.5rem;
-  }
-
   .btn{
+    padding-right: 4.5rem;
     &__app{
       &:not(:last-child){
         margin-bottom: 2rem;
@@ -155,11 +153,9 @@
 
 
 @media(min-width: 720px) and (max-width: 1139px){
-  .btn, .btn:link, .btn:visited{
-    padding-right: 4.5rem;
-  }
 
   .btn{
+    padding-right: 4.5rem;
     &__icon-cofee{
       right: 6.4rem;
     }
@@ -175,11 +171,10 @@
       transform: scale(0);
       transition: transform 400ms ease;
     }
+    padding: 2rem;
     &:hover{
       padding-right: 4rem;
       .btn__icon-cofee{
-        //right: 4.2rem;
-        //right: 6rem;
         transform: scale(1);
       }
     }

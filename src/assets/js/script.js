@@ -1,38 +1,12 @@
-console.log('Самопроверка:');
-console.log('Проверка валидации страниц: +16');
-console.log('Планировка соответствует дизайну +42');
-console.log('Требования CSS +10');
-console.log('Интерактивность +32');
-console.log('Итого: 100');
+// console.log('Самопроверка:');
+// console.log('Проверка валидации страниц: +16');
+// console.log('Планировка соответствует дизайну +42');
+// console.log('Требования CSS +10');
+// console.log('Интерактивность +32');
+// console.log('Итого: 100');
 
 
-//Header menu
-const header = document.querySelector('.header');
-const menu = header.querySelector('.menu')
-const menuMobile = menu.querySelector('.menu__mobile')
-
-function openMenu(){
-    menu.classList.add('open');
-    document.body.classList.add('_lock');
-}
-
-function closeMenu(){
-    menu.classList.remove('open');
-    document.body.classList.remove('_lock');
-}
-
-//Header menu
-
-if(menuMobile){
-    menuMobile.addEventListener("click", function(e){
-        if(menu.classList.contains("open")){
-            closeMenu()
-        } else{
-            openMenu()
-        }
-    });
-}
-
+import  './menuMobile'
 import './slider'
 
 

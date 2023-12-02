@@ -20,6 +20,10 @@ body{
   color: $text-dark;
 
   min-width: 320px;
+
+  &._lock{
+    overflow: hidden;
+  }
 }
 
 .container{
