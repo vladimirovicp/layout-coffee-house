@@ -27,14 +27,8 @@ if (slider) {
                 positionSlide = (currentBullet - 1) * imgWidth;
                 wrapper.scrollLeft = arrow.classList.contains('slider__button-prev') ? positionSlide - imgWidth : positionSlide + imgWidth;
                 bullets.forEach(bullet => {
-
-                    if (currentBullet === 4){
-                        currentBullet = 1;
-                    }
-
-                    if (currentBullet === 0){
-                        currentBullet = 3;
-                    }
+                    if (currentBullet === 4){currentBullet = 1;}
+                    if (currentBullet === 0){currentBullet = 3;}
 
                     if (Number(bullet.dataset.bullet) === currentBullet) {
                         bullet.classList.remove('active')
@@ -88,6 +82,41 @@ if (slider) {
     //         arrowNext.classList.add('disable')
     //     }
     // }
+
+    // function autoSlide(){
+    //     setInterval(() => {
+    //         if (currentBullet === 4){currentBullet = 1;}
+    //         currentBullet = currentBullet + 1;
+    //
+    //         sliderTrue()
+    //     }, 5000);
+    // }
+    //
+    function sliderTrue(){
+        positionSlide = (currentBullet - 1) * imgWidth;
+        wrapper.scrollLeft = positionSlide - imgWidth;
+    }
+    //
+    // autoSlide();
+
+    let animainterval = setInterval(() => {
+        if (currentBullet === 4){currentBullet = 1;}
+        currentBullet = currentBullet + 1;
+        sliderTrue()
+    }, 1000)
+
+    wrapper.addEventListener('mouseover', ()=>{
+        clearInterval(animainterval);
+    })
+
+    wrapper.addEventListener('mouseleave', ()=>{
+        animainterval = setInterval(()=>{
+            if (currentBullet === 4){currentBullet = 1;}
+            currentBullet = currentBullet + 1;
+            sliderTrue()
+        }, 1000)
+    })
+
 
 
     window.addEventListener('resize', function (event) {
