@@ -58,22 +58,59 @@
     cursor: pointer;
     width: 5.2rem;
     height: 2.6rem;
+    position: relative;
 
     span {
       width: 4rem;
       height: .4rem;
       background-color: $border-light;
-      display: inline-block;
-      transition: background-color 0.6s, transform 0.6s;
+      display: block;
+      //transition: background-color 0.6s, transform 0.6s;
+      transition: background-color 0.6s;
+      position: relative;
+      //&:after{
+      //  content: '';
+      //  width: 0;
+      //  height: .4rem;
+      //  background-color: $border-dark;
+      //  transition: width 5s;
+      //  display: block;
+      //}
+
+      &.slider__bullet-bar{
+        position: absolute;
+        left: .6rem;
+        width: 0;
+        height: .4rem;
+        background-color: $border-dark;
+      }
+
     }
+
+
 
     &.active {
       pointer-events: none;
       cursor: default;
       span {
-        background-color: $border-dark;
+       //background-color: $border-dark;
+       // &:after{
+       //   position: absolute;
+       //   //width: 4rem;
+       //   background-color: $border-dark;
+       // }
       }
+
+      //&:after{
+      //  position: absolute;
+      //  width: 4rem;
+      //  height: .4rem;
+      //  left: 50%;
+      //  transform: translateX(-50%);
+      //}
     }
+
+
   }
 
 
@@ -200,12 +237,24 @@
 
     }
 
-    &__bullet {
-      &:hover{
-        span{
-          transform: scale(1.2);
-        }
-      }
-    }
+    //&:hover{
+    //  .slider__pagination{
+    //    .slider__bullet{
+    //      span {
+    //        &:after{
+    //          animation-play-state: paused;
+    //        }
+    //      }
+    //    }
+    //  }
+    //}
+
+    //&__bullet {
+    //  &:hover{
+    //    span{
+    //      transform: scale(1.2);
+    //    }
+    //  }
+    //}
   }
 }

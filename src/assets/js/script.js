@@ -8,7 +8,7 @@ console.log('2. Реализация карусели на home странице
 
 import  './menuMobile'
 // import './slider'
-//import './slider2'
+import './slider2'
 
 
 let tab = function () {
