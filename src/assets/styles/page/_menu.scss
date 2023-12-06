@@ -94,6 +94,12 @@
         text-align: center;
       }
     }
+
+    &__card{
+      &:not(:nth-child(-n+4)){
+        display: none;
+      }
+    }
   }
 
 
