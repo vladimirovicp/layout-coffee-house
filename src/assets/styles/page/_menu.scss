@@ -95,15 +95,47 @@
       }
     }
 
-    &__card{
-      &:not(:nth-child(-n+4)){
-        display: none;
-      }
-    }
+
+
+
+
+
   }
 
 
 
+}
+
+@media(max-width: 1140px){
+  .menu{
+    &__card{
+      &:not(:nth-child(-n+4)){
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        right: -100%;
+        transform: scale(0);
+        height: 0;
+      }
+    }
+
+    &__cards{
+      &.is-active-cards{
+        .menu__card{
+          transition: opacity 1.5s, transform 1.5s, height 1.5s;
+          &:nth-child(n + 1){
+            position: static;
+            opacity: 1;
+            height: 50.6rem;
+            transform: scale(1);
+          }
+        }
+        .show-more{
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @media(min-width: 1140px){
@@ -112,13 +144,10 @@
       width: 80rem;
       margin: 0 auto;
     }
-
     .show-more{
       display: none;
     }
   }
-
-
 }
 
 

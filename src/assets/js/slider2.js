@@ -72,7 +72,7 @@ if (slider) {
     let bulletBarStart = setInterval(bulletBarStartFun,49);
 
     function bulletBarStartFun(){
-        console.log(bulletBar)
+        //console.log(bulletBar)
         if (bulletBar === 100){
             bulletBar = 0;
             clearInterval(bulletBarStart);
