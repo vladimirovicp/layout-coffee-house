@@ -31,9 +31,10 @@ if (slider) {
     })
 
 
-    function slideTo(nextBullet){
+    function slideTo(nextBullet, timer = 49){
 
-        bulletBarStart = setInterval(bulletBarStartFun,49);
+        clearInterval(bulletBarStart);
+        bulletBarStart = setInterval(bulletBarStartFun,timer);
         if(nextBullet === 0){
             currentBullet = 4;
             nextBullet = 3;
@@ -120,16 +121,16 @@ if (slider) {
 
     arrowPrev.addEventListener('mouseleave', ()=>{
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1);
+            slideTo(currentBullet + 1, 48 + .49 * bulletBar);
         }, 5000)
-        bulletBarStart = setInterval(bulletBarStartFun,49 + .49 * bulletBar);
+        bulletBarStart = setInterval(bulletBarStartFun,48 + .49 * bulletBar);
     })
 
     arrowNext.addEventListener('mouseleave', ()=>{
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1);
+            slideTo(currentBullet + 1, 48 + 0.49 * bulletBar);
         }, 5000)
-        bulletBarStart = setInterval(bulletBarStartFun,50 + .49 * bulletBar);
+        bulletBarStart = setInterval(bulletBarStartFun,48 + 0.49 * bulletBar);
     })
 
 
