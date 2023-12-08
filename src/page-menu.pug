@@ -750,7 +750,7 @@ block content
                         each item in products
                             if (item.category === categoryProduct)
                                 - i++
-                                .menu__card
+                                div(class= "menu__card modal_btn" data-category=categoryProduct data-name=item.name)
                                     .menu__card-img
                                         img(src='./assets/img/menu/'+ categoryProduct + '-' + i + '.jpg', alt=item.name)
                                     .menu__card-wrapper
@@ -769,7 +769,7 @@ block content
                         each item in products
                             if item.category === categoryProduct
                                 - i++
-                                .menu__card
+                                div(class= "menu__card modal_btn" data-category=categoryProduct data-name=item.name)
                                     .menu__card-img
                                         img(src='./assets/img/menu/' + categoryProduct + '-' + i + '.jpg', alt=item.name)
                                     .menu__card-wrapper
@@ -784,7 +784,7 @@ block content
                         each item in products
                             if item.category === categoryProduct
                                 - i++
-                                .menu__card
+                                div(class= "menu__card modal_btn" data-category=categoryProduct data-name=item.name)
                                     .menu__card-img
                                         img(src='./assets/img/menu/' + categoryProduct + '-' + i + '.jpg', alt=item.name)
                                     .menu__card-wrapper

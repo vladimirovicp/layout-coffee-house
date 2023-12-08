@@ -1,4 +1,4 @@
-.modal.modal__form-menu.active
+.modal.modal__form-menu
     .modal__content
         .modal__photo
             figure
@@ -13,34 +13,34 @@
                         input(type="radio" id="size_s" name="size" value="s" checked)
                         label(for="size_s" class="modal__form-label btn__menu")
                             span.btn__menu-ico s
-                            |200 ml
+                            span.size 200 ml
                     .modal__form-group
                         input(type="radio" id="size_m" name="size" value="m")
                         label(for="size_m" class="modal__form-label btn__menu")
                             span.btn__menu-ico m
-                            |300 ml
+                            span.size 300 ml
                     .modal__form-group
                         input(type="radio" id="size_l" name="size" value="l")
                         label(for="size_l" class="modal__form-label btn__menu")
                             span.btn__menu-ico l
-                            |400 ml
+                            span.size 400 ml
                 .modal__group-title Additives
                 .modal__info-additives.modal__form-groups
                     .modal__form-group
                         input(type="checkbox" id="sugar" name="Sugar")
                         label(for="sugar" class="modal__form-label btn__menu")
                             span.btn__menu-ico 1
-                            |Sugar
+                            span.additives-name Sugar
                     .modal__form-group
                         input(type="checkbox" id="cinnamon" name="cinnamon")
                         label(for="cinnamon" class="modal__form-label btn__menu")
                             span.btn__menu-ico 2
-                            | Cinnamon
+                            span.additives-name Cinnamon
                     .modal__form-group
                         input(type="checkbox" id="syrup" name="syrup")
                         label(for="syrup" class="modal__form-label btn__menu")
                             span.btn__menu-ico 3
-                            | Syrup
+                            span.additives-name Syrup
                 .modal__total
                     .modal__total-name Total:
                     .modal__total-price $7.00
