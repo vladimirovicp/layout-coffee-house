@@ -1,0 +1,49 @@
+.modal.modal__form-menu.active
+    .modal__content
+        .modal__photo
+            figure
+                img(src='./assets/img/menu/coffee-1.jpg', alt="Irish coffee")
+        .modal__info
+            h2.modal__title Irish coffee
+            .modal__description Fragrant black coffee with Jameson Irish whiskey and whipped milk
+            .modal__form
+                .modal__group-title Size
+                .modal__info-size.modal__form-groups
+                    .modal__form-group
+                        input(type="radio" id="size_s" name="size" value="s" checked)
+                        label(for="size_s" class="modal__form-label btn__menu")
+                            span.btn__menu-ico s
+                            |200 ml
+                    .modal__form-group
+                        input(type="radio" id="size_m" name="size" value="m")
+                        label(for="size_m" class="modal__form-label btn__menu")
+                            span.btn__menu-ico m
+                            |300 ml
+                    .modal__form-group
+                        input(type="radio" id="size_l" name="size" value="l")
+                        label(for="size_l" class="modal__form-label btn__menu")
+                            span.btn__menu-ico l
+                            |400 ml
+                .modal__group-title Additives
+                .modal__info-additives.modal__form-groups
+                    .modal__form-group
+                        input(type="checkbox" id="sugar" name="Sugar")
+                        label(for="sugar" class="modal__form-label btn__menu")
+                            span.btn__menu-ico 1
+                            |Sugar
+                    .modal__form-group
+                        input(type="checkbox" id="cinnamon" name="cinnamon")
+                        label(for="cinnamon" class="modal__form-label btn__menu")
+                            span.btn__menu-ico 2
+                            | Cinnamon
+                    .modal__form-group
+                        input(type="checkbox" id="syrup" name="syrup")
+                        label(for="syrup" class="modal__form-label btn__menu")
+                            span.btn__menu-ico 3
+                            | Syrup
+                .modal__total
+                    .modal__total-name Total:
+                    .modal__total-price $7.00
+            .modal__footer
+                .modal__footer-text The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                span.modal__close.btn__menu Close

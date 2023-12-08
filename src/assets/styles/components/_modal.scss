@@ -1,0 +1,150 @@
+.modal{
+  background: $background-body;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.5s all;
+  z-index: 20;
+
+  &.active{
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+  }
+
+  &__close{
+
+  }
+
+
+
+  &__content{
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__photo{
+    width: 31rem;
+    height: 31rem;
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+
+  &__info{
+    width: 43.8rem;
+  }
+
+
+  &__form-menu{
+    border-radius: 4rem;
+    padding: 1.6rem;
+  }
+
+  &__title{
+    font-size: 2.4rem;
+    padding-bottom: 1.2rem;
+  }
+  &__description{
+    padding-bottom: 2rem;
+  }
+
+  &__group{
+    &-title{
+      margin-bottom: .8rem;
+    }
+  }
+
+  &__form-groups{
+    display: flex;
+    gap:.8rem;
+    padding-bottom: 2rem;
+    input{
+      display: none;
+    }
+    .btn__menu-ico{
+      color: $text-dark!important;
+      text-transform: uppercase;
+    }
+
+    input:checked ~ label{
+      background-color: $background-container;
+      color: $text-light;
+      .btn__menu-ico{
+        background-color: $background-body;
+      }
+    }
+  }
+
+  &__total{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 125%;
+    padding-bottom: 2rem;
+    &-name{
+
+    }
+    &-price{
+
+    }
+  }
+
+  &__footer{
+    &-text{
+      margin-left: 2.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 140%;
+      position: relative;
+      margin-bottom: 2rem;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-image: url("./img/svg/info-empty.svg");
+        display: block;
+        top: 0;
+        left: -2.4rem;
+      }
+    }
+  }
+
+  &__close{
+    width: 100%;
+    display: block;
+    text-align: center;
+
+  }
+
+
+
+}
+
+
+
+@media(hover: hover) {
+  .modal{
+    &__close{
+      &:hover{
+
+      }
+    }
+
+    &__form-groups{
+      .btn__menu:hover{
+        .btn__menu-ico{
+          color: $text-dark;
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+}
