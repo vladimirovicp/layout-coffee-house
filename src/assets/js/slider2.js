@@ -223,6 +223,8 @@ if (slider) {
         console.log(dx)
         x0 = null
         if( dx < 200 && dx > -200){
+            clearInterval(bulletBarStart);
+            bulletBar = 0;
             bulletBarStart = setInterval(bulletBarStartFun,49);
             animainterval = setInterval(()=>{
                 slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
@@ -231,6 +233,7 @@ if (slider) {
 
         if( dx > 200){
 
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet - 1);
             clearInterval(animainterval);
