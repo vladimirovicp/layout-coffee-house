@@ -795,12 +795,7 @@ function downloadProduct(category,name){
                 }
                 //const viewSizes = itemSize.querySelector('.btn__menu-ico')
             })
-
             price.textContent = `$${(Number(prodectPrice) + Number(sizePrice) + additivesPrice).toFixed(2) }`
-
-
-
-
         })
 
 

@@ -6,7 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 0.5s all;
-  z-index: 20;
+  z-index: 100;
 
   &.active{
     transform: translate(-50%, -50%) scale(1);
@@ -105,6 +105,7 @@
         width: 1.6rem;
         height: 1.6rem;
         background-image: url("./img/svg/info-empty.svg");
+        background-size: 1.6rem;
         display: block;
         top: 0;
         left: -2.4rem;
@@ -118,9 +119,34 @@
     text-align: center;
 
   }
+}
 
 
+@media(max-width: 719px){
+  .modal{
+    &__photo{
+      display: none;
+    }
+    &__info{
+      width: 31rem;
+    }
 
+    &__form-groups{
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media(min-width: 720px) and (max-width: 1139px){
+  .modal{
+    &__info{
+      width: 32.6rem;
+    }
+
+    &__form-groups{
+      flex-wrap: wrap;
+    }
+  }
 }
 
 
