@@ -23,16 +23,37 @@ if (slider) {
     arrowNext.addEventListener('click', () =>{
         bulletBar = 0;
         slideTo(currentBullet + 1);
+        clearInterval(animainterval);
+        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
     })
 
     arrowPrev.addEventListener('click', () =>{
         bulletBar = 0;
         slideTo(currentBullet - 1);
+        clearInterval(animainterval);
+        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
     })
+
+    document.addEventListener('keydown', function(event) {
+        if (event.code == 'ArrowLeft') {
+            bulletBar = 0;
+            slideTo(currentBullet - 1);
+
+            clearInterval(animainterval);
+            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+        }
+        if (event.code == 'ArrowRight') {
+            bulletBar = 0;
+            slideTo(currentBullet + 1);
+            clearInterval(animainterval);
+            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+
+
+        }
+    });
 
 
     function slideTo(nextBullet, timer = 49){
-
         clearInterval(bulletBarStart);
         bulletBarStart = setInterval(bulletBarStartFun,timer);
         if(nextBullet === 0){
@@ -64,6 +85,9 @@ if (slider) {
             }
         })
         currentBullet = nextBullet;
+
+        clearInterval(animainterval);
+        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
     }
 
     let animainterval = setInterval(() => {
@@ -73,7 +97,7 @@ if (slider) {
     let bulletBarStart = setInterval(bulletBarStartFun,49);
 
     function bulletBarStartFun(){
-        //console.log(bulletBar)
+        console.log(bulletBar)
         if (bulletBar === 100){
             bulletBar = 0;
             clearInterval(bulletBarStart);
@@ -91,9 +115,6 @@ if (slider) {
         }
     }
 
-
-
-
     slidersInfo.forEach(slideInfo => {
         slideInfo.addEventListener('mouseover', ()=>{
             clearInterval(animainterval);
@@ -101,12 +122,10 @@ if (slider) {
         })
 
         slideInfo.addEventListener('mouseleave', ()=>{
-
             animainterval = setInterval(()=>{
-                slideTo(currentBullet + 1);
-            }, 5000)
-            bulletBarStart = setInterval(bulletBarStartFun,50 + .49 * bulletBar);
-
+                slideTo(currentBullet + 1, 49);
+            }, 5000 - 50 * bulletBar)
+            bulletBarStart = setInterval(bulletBarStartFun,49);
         })
     })
 
@@ -121,27 +140,18 @@ if (slider) {
 
     arrowPrev.addEventListener('mouseleave', ()=>{
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1, 48 + .49 * bulletBar);
-        }, 5000)
-        bulletBarStart = setInterval(bulletBarStartFun,48 + .49 * bulletBar);
+            slideTo(currentBullet + 1,49);
+        }, 5000 - 50 * bulletBar)
+
+        bulletBarStart = setInterval(bulletBarStartFun,49);
     })
 
     arrowNext.addEventListener('mouseleave', ()=>{
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1, 48 + 0.49 * bulletBar);
-        }, 5000)
-        bulletBarStart = setInterval(bulletBarStartFun,48 + 0.49 * bulletBar);
+            slideTo(currentBullet + 1, 49);
+        }, 5000 - 50 * bulletBar)
+        bulletBarStart = setInterval(bulletBarStartFun,49);
     })
-
-
-
-
-
-
-
-
-
-
 
     window.addEventListener('resize', function (event) {
         wrapper.scrollLeft = 0;
