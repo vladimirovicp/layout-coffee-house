@@ -23,6 +23,8 @@ if (slider) {
 
 
     arrowNext.addEventListener('click', () =>{
+
+        clearInterval(bulletBarStart);
         bulletBar = 0;
         slideTo(currentBullet + 1);
         clearInterval(animainterval);
@@ -30,6 +32,7 @@ if (slider) {
     })
 
     arrowPrev.addEventListener('click', () =>{
+        clearInterval(bulletBarStart);
         bulletBar = 0;
         slideTo(currentBullet - 1);
         clearInterval(animainterval);
@@ -38,6 +41,7 @@ if (slider) {
 
     document.addEventListener('keydown', function(event) {
         if (event.code == 'ArrowLeft') {
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet - 1);
 
@@ -45,6 +49,7 @@ if (slider) {
             animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
         }
         if (event.code == 'ArrowRight') {
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet + 1);
             clearInterval(animainterval);
@@ -92,8 +97,9 @@ if (slider) {
         })
         currentBullet = nextBullet;
         timer = 49;
+
         clearInterval(animainterval);
-        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+        //animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
 
     }
 
@@ -165,6 +171,7 @@ if (slider) {
     wrapper.addEventListener('mousedown', (e) => {
         x0 = e.clientX
         //console.log('click')
+        console.log('click')
         clearInterval(animainterval);
         clearInterval(bulletBarStart);
     });
@@ -174,14 +181,17 @@ if (slider) {
         //console.log(dx)
         x0 = null
         if( dx < 400 && dx > -400){
+            clearInterval(bulletBarStart);
+            bulletBar = 0;
             bulletBarStart = setInterval(bulletBarStartFun,49);
             animainterval = setInterval(()=>{
                 slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
             }, Math.floor(5000 - 50 * bulletBar))
+
         }
 
         if( dx > 400){
-
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet - 1);
             clearInterval(animainterval);
@@ -190,7 +200,7 @@ if (slider) {
         }
         if(dx < -400){
             //console.log('-400')
-
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet + 1);
             clearInterval(animainterval);
