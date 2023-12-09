@@ -69,6 +69,21 @@ module.exports = {
                 },
             },
         }),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ['dist'],
+                },
+                onEnd: {
+                    copy: [
+                        {
+                            source: path.join(__dirname, 'src/assets/video'),
+                            destination: path.join(__dirname, 'dist/assets/video'),
+                        },
+                    ],
+                },
+            },
+        }),
     ],
 
     module:{
@@ -114,6 +129,10 @@ module.exports = {
             },
             {
                 test: /\.(gif|png|jpg|jpeg|svg)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(mp4|webm)$/i,
                 type: 'asset/resource',
             },
 
