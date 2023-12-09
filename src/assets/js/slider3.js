@@ -18,15 +18,13 @@ if (slider) {
     let positionSlide = 0;
     let bulletBar = 0;
 
-    let timer = 49;
-
 
 
     arrowNext.addEventListener('click', () =>{
         bulletBar = 0;
         slideTo(currentBullet + 1);
-        clearInterval(animainterval);
-        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+        // clearInterval(animainterval);
+        // animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
     })
 
     arrowPrev.addEventListener('click', () =>{
@@ -53,15 +51,10 @@ if (slider) {
     });
 
 
-    function slideTo(nextBullet, mainTimer = 49){
-
-        //console.log('---------------------------------')
-        //console.log('mainTimer',mainTimer)
+    function slideTo(nextBullet, ){
 
         clearInterval(bulletBarStart);
-        bulletBar = 0;
         bulletBarStart = setInterval(bulletBarStartFun,49);
-
 
         if(nextBullet === 0){
             currentBullet = 4;
@@ -91,23 +84,36 @@ if (slider) {
             }
         })
         currentBullet = nextBullet;
-        timer = 49;
+
         clearInterval(animainterval);
         animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
-
     }
 
-    let animainterval = setInterval(() => {
-        slideTo(currentBullet + 1);
-    }, 5000);
+    //
+
+    // let animainterval = setInterval(() => {
+    //     slideTo(currentBullet + 1);
+    // }, 5000);
+
+
+    let animainterval = null;
 
     let bulletBarStart = setInterval(bulletBarStartFun,49);
 
+
     function bulletBarStartFun(){
         //console.log(bulletBar)
+
+        if(bulletBar === 0){
+            animainterval = setInterval(() => {
+                slideTo(currentBullet + 1);
+            }, 5000);
+        }
+
         if (bulletBar === 100){
+            clearInterval(animainterval);
             bulletBar = 0;
-            clearInterval(bulletBarStart);
+            //clearInterval(bulletBarStart);
         } else {
             bulletBar++;
             bullets.forEach(bullet => {
@@ -122,6 +128,8 @@ if (slider) {
         }
     }
 
+
+
     slidersInfo.forEach(slideInfo => {
         slideInfo.addEventListener('mouseover', ()=>{
             clearInterval(animainterval);
@@ -129,10 +137,12 @@ if (slider) {
         })
 
         slideInfo.addEventListener('mouseleave', ()=>{
-            bulletBarStart = setInterval(bulletBarStartFun,49);
             animainterval = setInterval(()=>{
-                slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
-            }, Math.floor(5000 - 50 * bulletBar))
+                slideTo(currentBullet + 1, 49 - 0.49 * bulletBar);
+            }, 5000 - 50 * bulletBar)
+
+            clearInterval(bulletBarStart);
+            bulletBarStart = setInterval(bulletBarStartFun,49 - 0.49 * bulletBar);
         })
     })
 
@@ -146,17 +156,18 @@ if (slider) {
     })
 
     arrowPrev.addEventListener('mouseleave', ()=>{
-        bulletBarStart = setInterval(bulletBarStartFun,49);
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar) );
+            slideTo(currentBullet + 1,49);
         }, 5000 - 50 * bulletBar)
+
+        bulletBarStart = setInterval(bulletBarStartFun,49);
     })
 
     arrowNext.addEventListener('mouseleave', ()=>{
-        bulletBarStart = setInterval(bulletBarStartFun,49);
         animainterval = setInterval(()=>{
-            slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
-        }, Math.floor(5000 - 50 * bulletBar))
+            slideTo(currentBullet + 1, 49);
+        }, 5000 - 50 * bulletBar)
+        bulletBarStart = setInterval(bulletBarStartFun,49);
     })
 
 
@@ -164,81 +175,44 @@ if (slider) {
 
     wrapper.addEventListener('mousedown', (e) => {
         x0 = e.clientX
-        //console.log('click')
-        clearInterval(animainterval);
-        clearInterval(bulletBarStart);
+        console.log('click')
+
+        // clearInterval(animainterval);
+        // clearInterval(bulletBarStart);
+
     });
 
     wrapper.addEventListener('mouseup', (e) => {
         let dx = e.clientX - x0;
         //console.log(dx)
         x0 = null
-        if( dx < 400 && dx > -400){
-            bulletBarStart = setInterval(bulletBarStartFun,49);
-            animainterval = setInterval(()=>{
-                slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
-            }, Math.floor(5000 - 50 * bulletBar))
-        }
+
+        // if( dx < 400 && dx > -400){
+        //     //console.log('8888')
+        //     animainterval = setInterval(()=>{
+        //         slideTo(currentBullet + 1, 49);
+        //     }, 5000 - 50 * bulletBar)
+        //     bulletBarStart = setInterval(bulletBarStartFun,49);
+        // }
 
         if( dx > 400){
-
             bulletBar = 0;
-            slideTo(currentBullet - 1);
-            clearInterval(animainterval);
-            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+            //slideTo(currentBullet - 1);
+            // clearInterval(animainterval);
+            // animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
             //console.log('400')
         }
         if(dx < -400){
             //console.log('-400')
 
             bulletBar = 0;
-            slideTo(currentBullet + 1);
-            clearInterval(animainterval);
-            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+            //slideTo(currentBullet + 1);
+            // clearInterval(animainterval);
+            // animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
 
         }
 
     });
-
-
-    wrapper.addEventListener('touchstart', (e) => {
-        x0 = e.changedTouches[0].clientX
-        console.log('click')
-        clearInterval(animainterval);
-        clearInterval(bulletBarStart);
-    });
-
-    wrapper.addEventListener('touchend', (e) => {
-        let dx = e.changedTouches[0].clientX - x0;
-        console.log(dx)
-        x0 = null
-        if( dx < 200 && dx > -200){
-            bulletBarStart = setInterval(bulletBarStartFun,49);
-            animainterval = setInterval(()=>{
-                slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
-            }, Math.floor(5000 - 50 * bulletBar))
-        }
-
-        if( dx > 200){
-
-            bulletBar = 0;
-            slideTo(currentBullet - 1);
-            clearInterval(animainterval);
-            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
-            //console.log('400')
-        }
-        if(dx < -200){
-            //console.log('-400')
-
-            bulletBar = 0;
-            slideTo(currentBullet + 1);
-            clearInterval(animainterval);
-            animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
-
-        }
-
-    });
-
 
     // swipeAction = function() {
     //     console.log('3113');
