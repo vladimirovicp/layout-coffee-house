@@ -23,7 +23,6 @@ if (slider) {
 
 
     arrowNext.addEventListener('click', () =>{
-
         clearInterval(bulletBarStart);
         bulletBar = 0;
         slideTo(currentBullet + 1);
@@ -95,6 +94,7 @@ if (slider) {
                 bullet.classList.add('active');
             }
         })
+
         currentBullet = nextBullet;
         timer = 49;
 
@@ -159,6 +159,7 @@ if (slider) {
     })
 
     arrowNext.addEventListener('mouseleave', ()=>{
+        console.log('mouseleave')
         bulletBarStart = setInterval(bulletBarStartFun,49);
         animainterval = setInterval(()=>{
             slideTo(currentBullet + 1, Math.floor(49 - .49 * bulletBar));
@@ -180,7 +181,7 @@ if (slider) {
         let dx = e.clientX - x0;
         //console.log(dx)
         x0 = null
-        if( dx < 400 && dx > -400){
+        if( dx < 200 && dx > -200){
             clearInterval(bulletBarStart);
             bulletBar = 0;
             bulletBarStart = setInterval(bulletBarStartFun,49);
@@ -190,7 +191,7 @@ if (slider) {
 
         }
 
-        if( dx > 400){
+        if( dx > 200){
             clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet - 1);
@@ -198,7 +199,7 @@ if (slider) {
             animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
             //console.log('400')
         }
-        if(dx < -400){
+        if(dx < -200){
             //console.log('-400')
             clearInterval(bulletBarStart);
             bulletBar = 0;
@@ -222,7 +223,7 @@ if (slider) {
         let dx = e.changedTouches[0].clientX - x0;
         console.log(dx)
         x0 = null
-        if( dx < 200 && dx > -200){
+        if( dx < 100 && dx > -100){
             clearInterval(bulletBarStart);
             bulletBar = 0;
             bulletBarStart = setInterval(bulletBarStartFun,49);
@@ -231,7 +232,7 @@ if (slider) {
             }, Math.floor(5000 - 50 * bulletBar))
         }
 
-        if( dx > 200){
+        if( dx > 100){
 
             clearInterval(bulletBarStart);
             bulletBar = 0;

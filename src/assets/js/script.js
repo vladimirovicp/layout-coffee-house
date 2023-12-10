@@ -3,7 +3,7 @@
 
 import  './menuMobile'
 // import './slider'
-import './slider2'
+import './slider3'
 import './menuTabCards'
 // import './downloadProduct'
 import './modal'
