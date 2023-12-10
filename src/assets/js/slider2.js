@@ -99,7 +99,7 @@ if (slider) {
         timer = 49;
 
         clearInterval(animainterval);
-        //animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
+        animainterval = setInterval(() => {slideTo(currentBullet + 1);}, 5000);
 
     }
 
@@ -242,7 +242,7 @@ if (slider) {
         }
         if(dx < -200){
             //console.log('-400')
-
+            clearInterval(bulletBarStart);
             bulletBar = 0;
             slideTo(currentBullet + 1);
             clearInterval(animainterval);
