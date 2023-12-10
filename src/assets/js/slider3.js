@@ -110,22 +110,26 @@ if (slider) {
     })
 
 
+    //*****************************/
 
+    // slidersInfo.forEach(slideInfo => {
+    //     slideInfo.addEventListener('mouseover', slideToStop)
+    //     slideInfo.addEventListener('mouseleave', slideToContinue)
+    // })
 
-
-    function slideToHover(){
-        slidersInfo.forEach(slideInfo => {
-            slideInfo.addEventListener('mouseover', slideToStop,false)
-            slideInfo.addEventListener('mouseleave', slideToContinue,false)
-        })
-    }
-
-    function slideToHoverRemove(){
-        slidersInfo.forEach(slideInfo => {
-            slideInfo.removeEventListener('mouseover', slideToStop,false)
-            slideInfo.removeEventListener('mouseleave', slideToContinue,false)
-        })
-    }
+    // function slideToHover(){
+    //     slidersInfo.forEach(slideInfo => {
+    //         slideInfo.addEventListener('mouseover', slideToStop,false)
+    //         slideInfo.addEventListener('mouseleave', slideToContinue,false)
+    //     })
+    // }
+    //
+    // function slideToHoverRemove(){
+    //     slidersInfo.forEach(slideInfo => {
+    //         slideInfo.removeEventListener('mouseover', slideToStop,false)
+    //         slideInfo.removeEventListener('mouseleave', slideToContinue,false)
+    //     })
+    // }
 
     //slideToHover();
 
@@ -137,7 +141,9 @@ if (slider) {
         //slideToHoverRemove();
         slideToStop();
         coordinateStartX = e.clientX
-    });
+        e.stopPropagation();
+
+    },true);
 
 
     wrapper.addEventListener('mouseup', (e) => {
@@ -158,8 +164,9 @@ if (slider) {
         }
 
         //slideToHover();
+        e.stopPropagation();
 
-    });
+    },true);
 
 
     wrapper.addEventListener('touchstart', (e) => {
