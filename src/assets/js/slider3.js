@@ -13,6 +13,10 @@ if (slider) {
     let bulletBar = 0;
     let coordinateStartX = null;
 
+    let swipeStart = false;
+
+    let hoverStop = false;
+
     let animainterval = setInterval(() => {
         slideToRight(currentBullet + 1);
     }, 5000);
@@ -38,11 +42,10 @@ if (slider) {
     let bulletBarStart = setInterval(bulletBarStartFun,49);
 
     function slideToActive(nextBullet){
+        //console.log(hoverStop)
         bullets.forEach(bullet => {
             if (Number(bullet.dataset.bullet) === currentBullet || currentBullet === 4 || currentBullet === 0) {
-
                 bullet.classList.remove('active')
-
                 bullets.forEach(bullet => {
                     let span = bullet.querySelector('.slider__bullet-bar');
                     span.style.width = 0;
@@ -67,10 +70,13 @@ if (slider) {
             currentBullet = 0;
             nextBullet = 1;
         }
+
         positionSlide = (currentBullet - 1) * imgWidth;
         wrapper.scrollLeft = positionSlide + imgWidth;
         slideToActive(nextBullet);
         currentBullet = nextBullet;
+
+        //console.log(hoverStop)
         animainterval = setInterval(() => {slideToRight(currentBullet + 1);}, 5000);
         bulletBarStart = setInterval(bulletBarStartFun,49)
     }
@@ -82,15 +88,20 @@ if (slider) {
             currentBullet = 4;
             nextBullet = 3;
         }
+        hoverStop = true
+
         positionSlide = (currentBullet - 1) * imgWidth;
         wrapper.scrollLeft = positionSlide - imgWidth;
         slideToActive(nextBullet);
         currentBullet = nextBullet;
+
+        hoverStop = false
+
         animainterval = setInterval(() => {slideToRight(currentBullet + 1);}, 5000);
         bulletBarStart = setInterval(bulletBarStartFun,49)
     }
     function slideToStop(){
-        console.log('stop')
+        //console.log('stop')
         clearInterval(bulletBarStart);
         clearInterval(animainterval);
     }
@@ -103,19 +114,40 @@ if (slider) {
 
 
     arrowNext.addEventListener('click', () =>{
-        slideToRight(currentBullet + 1);
+            slideToRight(currentBullet + 1);
     })
     arrowPrev.addEventListener('click', () =>{
-        slideToLeft(currentBullet - 1);
+            slideToLeft(currentBullet - 1);
     })
 
+    //кнопки клавиатуры
+    document.addEventListener('keydown', function(event) {
+        if (event.code === 'ArrowLeft') {
+            slideToLeft(currentBullet - 1);
+        }
+        if (event.code === 'ArrowRight') {
+            slideToRight(currentBullet + 1);
+        }
+    });
 
     //*****************************/
 
     // slidersInfo.forEach(slideInfo => {
-    //     slideInfo.addEventListener('mouseover', slideToStop)
-    //     slideInfo.addEventListener('mouseleave', slideToContinue)
+    //     slideInfo.addEventListener('mouseenter', () => {
+    //         if (!hoverStop ) {
+    //             console.log('slideInfo Start');
+    //             slideToStop();
+    //         }
+    //     })
+    //     slideInfo.addEventListener('mouseleave', () =>{
+    //         if (!hoverStop) {
+    //             console.log('slideInfo End');
+    //             slideToContinue();
+    //         }
+    //     })
     // })
+
+
 
     // function slideToHover(){
     //     slidersInfo.forEach(slideInfo => {
@@ -139,13 +171,12 @@ if (slider) {
 
     wrapper.addEventListener('mousedown', (e) => {
         //slideToHoverRemove();
+        hoverStop = true;
         slideToStop();
         coordinateStartX = e.clientX
-        e.stopPropagation();
+        //e.stopPropagation();
 
-    },true);
-
-
+    });
     wrapper.addEventListener('mouseup', (e) => {
 
         const differenceCoordinate = e.clientX - coordinateStartX;
@@ -164,21 +195,22 @@ if (slider) {
         }
 
         //slideToHover();
-        e.stopPropagation();
+        //e.stopPropagation();
+        hoverStop = false;
 
-    },true);
 
+    });
 
     wrapper.addEventListener('touchstart', (e) => {
+        swipeStart = true;
         slideToStop();
         coordinateStartX = e.changedTouches[0].clientX
     });
-
     wrapper.addEventListener('touchend', (e) => {
         const differenceCoordinate = e.changedTouches[0].clientX - coordinateStartX;
         coordinateStartX = null;
 
-        console.log(differenceCoordinate)
+        //console.log(differenceCoordinate)
 
         if( differenceCoordinate > 2 || differenceCoordinate > -2 ){
             slideToContinue();
@@ -189,6 +221,7 @@ if (slider) {
         if(differenceCoordinate < -50){
             slideToRight(currentBullet + 1);
         }
+        swipeStart = false;
     })
 
     window.addEventListener('resize', function (event) {
